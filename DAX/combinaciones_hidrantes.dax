@@ -1,0 +1,34 @@
+CombinacionesHidrantes = 
+SELECTCOLUMNS(
+    CROSSJOIN(
+        SELECTCOLUMNS(cr5b6_hidrante, 
+            "ID_Origen", cr5b6_hidrante[Código de Hidrante],
+            "Lat_Origen", cr5b6_hidrante[Latitud],
+            "Lon_Origen", cr5b6_hidrante[Longitud]
+        ),
+        SELECTCOLUMNS(cr5b6_hidrante, 
+            "ID_Destino", cr5b6_hidrante[Dirección],
+            "Lat_Destino", cr5b6_hidrante[Latitud],
+            "Lon_Destino", cr5b6_hidrante[Longitud]
+        )
+    ),
+    "ID_Origen", [ID_Origen],
+    "Lat_Origen", [Lat_Origen],
+    "Lon_Origen", [Lon_Origen],
+    "ID_Destino", [ID_Destino],
+    "Lat_Destino", [Lat_Destino],
+    "Lon_Destino", [Lon_Destino]
+)
+
+
+
+
+
+
+
+
+
+
+
+
+Agregando fórmula de combinaciones
