@@ -1,0 +1,10 @@
+DistanciaKM = 
+VAR Lat1 = [Lat_Origen]
+VAR Lon1 = [Lon_Origen]
+VAR Lat2 = [Lat_Destino]
+VAR Lon2 = [Lon_Destino]
+VAR P = PI() / 180
+VAR A = 
+    0.5 - COS((Lat2 - Lat1) * P)/2 + 
+    COS(Lat1 * P) * COS(Lat2 * P) * (1 - COS((Lon2 - Lon1) * P)) / 2
+RETURN 12742 * ASIN(SQRT(A))
